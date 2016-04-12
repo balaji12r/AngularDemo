@@ -1,14 +1,10 @@
 'use strict';
 
-var app = angular.module('myApp.view1', ['ngRoute']);
+var app = angular.module('myApp.view1', ['ngRoute','View1BookController']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+    controller: 'BookCtrl'
   });
 }])
-
-app.controller('View1Ctrl', ['$scope',viewService,function($scope,viewService) {
-    $scope.name="jrjrej";
-}]);

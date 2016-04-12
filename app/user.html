@@ -1,8 +1,8 @@
-<html lang="en" ng-app="myBookApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="MyUserApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS BookApp</title>
+  <title>UserApp</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -10,16 +10,17 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-controller="BookCtrl">
-  <ul>
-        <li ng-repeat="book in books">
-          <p>Name : {{book.name}}</p>
-          <p>Author : {{book.author}}</p>
-          <p>price : {{book.price}}</p>
-        </li>
-      </ul>
+<body >
+  <div ng-controller="MyCtrl">
+    <ul ng-repeat="user in users">
+      <li>{{user}}</li>
+    </ul>
+    <div class="nested" ng-controller="AnotherCtrl">
+      First user: {{firstUser}}
+    </div>
+  </div>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="controller/bookController.js"></script>
-</body>
+  <script src="userApp.js"></script>
+  <script src="UserService.js"></script>
+  <script src="userController.js"></script>
 </html>
